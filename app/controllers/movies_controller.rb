@@ -3,13 +3,15 @@ class MoviesController < ApplicationController
 
   # GET /movies
   def index
-    @movies = Movie.all
+    @movies = Movie.order(created_at: :desc)
 
     render json: @movies
   end
 
   # GET /movies/1
   def show
+    # sleep for 2 seconds
+    # sleep 2
     render json: @movie
   end
 
